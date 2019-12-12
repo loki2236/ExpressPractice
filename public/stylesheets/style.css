@@ -10,3 +10,31 @@ a {
 .inputForm {
   display: inline;
 }
+
+.formContainer{
+  background-color: #f4e89d;
+  text-align: center;
+  display: inline-block;
+  clear: both;
+}
+
+.tableContainer{
+  background-color: #bddfd8;
+  width: 50%;
+  text-align: center;
+  display: table;
+  clear: both;
+}
+
+.submitImage{
+  background:url('/images/bin.png') no-repeat center top;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  color: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}

@@ -1,24 +1,27 @@
 <h2>Tablero de novedades</h2>
 
-<form class="inputForm" method="POST" action="/novedades/insertNovedad/">
-    <label for="novedad">Novedad:</label><input type="text" name="novedad"> 
-    <label for="user">Autor:</label><input type="text" name="user">
-    <input type="hidden" name="date" value="{{timestamp}}" id="timestampField">
-    <input type="submit" value="Cargar">
-</form>
+<div class="formContainer">
+    <form class="inputForm" method="POST" action="/novedades/insertNovedad/">
+        <label for="novedad">Novedad:</label><input type="text" name="novedad"> 
+        <label for="user">Autor:</label><input type="text" name="user">
+        <input type="submit" value="Cargar">
+    </form>
+</div>
 
-<div>
+<div class="tableContainer">
     <table style="width:100%">
         <tr>
             <th>Novedad</th>
             <th>Autor</th>
             <th>Fecha</th>
+            <th>Accion</th>
         </tr>
         {{#each novedades}}
             <tr>
                 <td>{{novedad}}</td>
                 <td>{{user}}</td>
-                <td>{{date}}</td>
+                <td>{{convert date}}</td>
+                <td><form method="POST" action="/novedades/deleteNovedad/"><input type="hidden" name="id" value="{{_id}}"><input class="submitImage" type="submit" value=""></form></td>
             </tr>
         {{/each}}
 </div>
