@@ -19,9 +19,10 @@ client.connect(function(err) {
   collection.find({}).toArray(function(err, docs) {
     if (!err){
       console.log(`Se han cargado ${docs.length} documentos`);
+      console.log(docs);
       /* Pongo el GET aca. */
       router.get('/', function(req, res, next) {
-        res.render('index', { title: 'Novedades de la empresa', novedades: docs });
+        res.render('index', { title: 'Novedades de la empresa', novedades: docs, timestamp: Date.now() });
       });
 
     }

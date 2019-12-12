@@ -1,7 +1,24 @@
 <h2>Tablero de novedades</h2>
 
-<form class="inputForm" method="POST" action="/submit-novedad">
-    Novedad: <input type="text" name="novedad"> 
-    Autor: <input type="text" name="novedad">
+<form class="inputForm" method="POST" action="/novedades/insertNovedad/">
+    <label for="novedad">Novedad:</label><input type="text" name="novedad"> 
+    <label for="user">Autor:</label><input type="text" name="user">
+    <input type="hidden" name="date" value="{{timestamp}}" id="timestampField">
     <input type="submit" value="Cargar">
 </form>
+
+<div>
+    <table style="width:100%">
+        <tr>
+            <th>Novedad</th>
+            <th>Autor</th>
+            <th>Fecha</th>
+        </tr>
+        {{#each novedades}}
+            <tr>
+                <td>{{novedad}}</td>
+                <td>{{user}}</td>
+                <td>{{date}}</td>
+            </tr>
+        {{/each}}
+</div>
