@@ -8,6 +8,8 @@ const hbs = require('express-handlebars');
 const hbshelpers = require('handlebars-helpers');
 const multihelpers = hbshelpers();
 
+require('./controllers/dbController').getDb();
+
 var indexRouter = require('./routes/index');
 var novedadesRouter = require('./routes/novedades');
 var app = express();
